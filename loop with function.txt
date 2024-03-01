@@ -1,0 +1,267 @@
+reverse(with argument and with return)
+
+
+
+1. Write a for loop that prints numbers from 1 to 10.
+
+#include<bits/stdc++.h>
+using namespace std;
+int reverse(int num)
+{
+    int i;
+    for(int i=1; i<=num; i++){
+        cout<<i;
+    }
+    return i;
+    
+}
+int main(){
+    int num;
+    int g;
+    cout<<"enter the last number";
+    cin>>num;
+    g=reverse(num);
+    cout<<g;
+    
+}
+
+2. Create a for loop that counts down from 10 to 1 and prints each
+number.
+
+#include<bits/stdc++.h>
+using namespace std;
+int reverse(int num)
+{
+    int i;
+    for(int i=10; i>=num; i--){
+        cout<<i;
+    }
+    return i;
+    
+}
+int main(){
+    int num;
+    int g;
+    cout<<"enter the 1";
+    cin>>num;
+    g=reverse(num);
+    cout<<g;
+}
+3. Write a for loop to print even numbers from 2 to 20.
+
+#include<bits/stdc++.h>
+using namespace std;
+int reverse(int num)
+{
+    int i;
+    for(int i=1; i<=num; i++){
+        if(i%2==0){
+            cout<<i;
+        }
+    }
+    return i;
+    
+}
+int main(){
+    int num;
+    int g;
+    cout<<"enter the 1";
+    cin>>num;
+    g=reverse(num);
+    cout<<g;
+}
+
+4. Create a for loop to print the first 5 multiples of 3.
+
+#include<bits/stdc++.h>
+using namespace std;
+int reverse(int num)
+{
+    int i;
+    for(int i=1; i<=num; i++){
+        cout<<i*3<<"\n";
+    }
+    return i;
+    
+}
+int main(){
+    int num;
+    int g;
+    cout<<"enter the num";
+    cin>>num;
+    
+    reverse(num);
+    
+}
+
+5. Write a for loop to calculate the sum of numbers from 1 to 10.
+
+#include<bits/stdc++.h>
+using namespace std;
+int reverse(int num,int sum)
+{
+    for(int i=1; i<=num; i++){
+        sum=sum+i;
+    }
+    cout<<sum;
+    return sum;
+    
+}
+int main(){
+    int num;
+    int sum;
+    int g;
+    cout<<"enter the num\n";
+    cin>>num;
+    
+    reverse(num,sum);
+    
+}
+
+6. Create a for loop that prints the square of numbers from 1 to 5.
+#include<bits/stdc++.h>
+using namespace std;
+int reverse(int num,int sum)
+{
+    for(int i=1; i<=num; i++){
+        sum=i*i;
+        cout<<sum<<"\n";
+    }
+    return sum;
+    
+}
+int main(){
+    int num;
+    int sum;
+    int g;
+    cout<<"enter the num\n";
+    cin>>num;
+    
+    reverse(num,sum);
+    
+}
+
+7. Write a for loop to print the reverse of a given list.
+
+#include<bits/stdc++.h>
+using namespace std;
+int reverse(int num,int rem,int sum)
+{
+    while(num>0){
+        rem=num%10;
+        sum=sum*10+rem;
+        num=num/10;
+    }
+    return sum;
+}
+int main(){
+    int num;
+    int rem;
+    int sum;
+    int g;
+    cout<<"enter any number";
+    cin>>num;
+    g=reverse(num,rem,sum);
+    cout<<g;
+}
+
+
+
+10. Create a for loop to find the average of numbers in a list.
+
+#include<bits/stdc++.h>
+using namespace std;
+float reverse(int a,int b,int c,int d,float e)
+{
+    e=(a+b+c+d)/4;
+    cout<<e;
+    return e;
+    
+}
+int main(){
+    int a,b,c,d;
+    float e;
+    cout<<"enter the num\n";
+    cin>>a>>b>>c>>d;
+    
+    reverse(a,b,c,d,e);
+    
+}
+
+11. Write a for loop to find the factorial of a given number.
+
+#include<bits/stdc++.h>
+using namespace std;
+int reverse(int num,int fact)
+{
+    
+    for(int i=1; i<=num; i++){
+        fact=fact*i;
+    }
+    cout<<fact;
+    return fact;
+    
+}
+int main(){
+    int num;
+    int fact=1;
+    cout<<"enter the num\n";
+    cin>>num;
+    
+    reverse(num,fact);
+    
+}
+
+12. Create a for loop to print the Fibonacci series up to 10 terms.
+#include<bits/stdc++.h>
+using namespace std;
+int fibb(int n1,int n2,int n3,int num){
+    for(int i=1; i<=num; i++){
+        n3=n1+n2;
+        cout<<n3;
+        n1=n2;
+        n2=n3;
+    }
+    return n3;
+}
+int main(){
+    int num;
+    cout<<"enter the number which you want to fibbnacci";
+    cin>>num;
+    int n1=0;
+    int n2=1;
+    int n3;
+    fibb(n1,n2,n3,num);
+    
+}
+
+13. Write a for loop to check if a number is prime or not.
+#include<bits/stdc++.h>
+using namespace std;
+int reverse(int num,int flag)
+{
+    for(int i=2; i<num; i++){
+        if(num%i==0){
+            flag=0;
+            break;
+        }
+    }
+    if(flag==1){
+        cout<<"prime";
+    }else{
+        cout<<"not prime";
+    }
+    return 0;
+    
+}
+int main(){
+    int num;
+    int sum;
+    int flag=1;
+    int g;
+    cout<<"enter the num\n";
+    cin>>num;
+    
+    reverse(num,sum);
+    
+}

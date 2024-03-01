@@ -1,0 +1,65 @@
+Scenario 1: Access Control
+You are developing a simple login system. Write a C++ program that prompts the user for a username
+and password. If both the username and password match predefined values, grant access.
+Otherwise, deny access.
+
+Scenario 2: Membership Eligibility
+Create a program that checks if a user is eligible for a premium membership based on age and
+subscription status. If the user is at least 18 years old and has a valid subscription, provide access;
+otherwise, deny access.
+
+Scenario 3: Grade Classification
+Design a program that takes a student's numerical grade as input and outputs their corresponding
+letter grade. Use if-else statements to categorize the grades as 'A', 'B', 'C', 'D', or 'F'.
+
+Scenario 4: Shipping Charges
+Write a C++ program that calculates shipping charges based on the weight of a package. If the weight
+is less than or equal to 5 pounds, apply a flat rate; otherwise, charge an additional fee per pound for
+weights exceeding 5 pounds.
+
+Scenario 5: Discount Calculation
+You are working for an e-commerce platform. Implement a program that calculates the total cost of
+an order after applying discounts. If the order amount is greater than $50 and the user is a premium
+member, provide a 10% discount; otherwise, provide a 5% discount.
+
+Scenario 6: Ticket Pricing
+Develop a program that determines the price of a movie ticket based on the age of the user and the
+time of the movie. If the user is a child (age <= 12), provide a discount. If the movie is a matinee
+(before 5 PM), apply an additional discount.
+
+7. **Scenario 7: Authentication System**
+Design a program for a secure system that requires two-factor authentication. The user needs to
+input both a valid username/password combination and a time-sensitive authentication code. Grant
+access only if both conditions are met.
+
+8. **Scenario 8: Voting Eligibility**
+
+Create a program that checks if a person is eligible to vote. The eligibility criteria include being at
+least 18 years old and not having a criminal record. Grant voting access only if both conditions are
+satisfied.
+
+9. **Scenario 9: Temperature Classification**
+Write a program that classifies the temperature into different categories (cold, moderate, hot). Use
+relational operators to compare the temperature input and categorize it accordingly.
+
+10. **Scenario 10: Exam Pass/Fail**
+Develop a program that determines whether a student passes or fails an exam based on the input
+marks. If the student scores 40% or more, consider it a pass; otherwise, mark it as a fail.
+
+11. **Scenario 11: Library Fine Calculation**
+Implement a program for a library that calculates the fine for overdue books. If a book is returned
+after the due date, charge a base fine. If it's returned more than a week late, apply an additional fee.
+
+12. **Scenario 12: Product Discount**
+Design a program for an online store that applies different discounts based on the user's purchase
+history. If a user has made more than 5 purchases, offer a 15% discount; otherwise, provide a
+standard 10% discount.
+
+Scenario 13: Event Invitation
+Create a program for an exclusive event. Users are invited if they are either VIP guests or have
+purchased a premium ticket. Use the OR logical operator to check the conditions and grant access
+accordingly.
+
+Scenario 14: Password Recovery
+Design a simple password recovery system. Allow access if the user provides either the correct
+password or a valid recovery code. Ensure that users can gain access if either condition is satisfied.
