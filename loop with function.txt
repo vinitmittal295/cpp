@@ -265,3 +265,50 @@ int main(){
     reverse(num,sum);
     
 }
+
+37. Write a program to check whether a given number is a happy number or not.
+/******************************************************************************
+
+Welcome to GDB Online.
+GDB online is an online compiler and debugger tool for C, C++, Python, Java, PHP, Ruby, Perl,
+C#, OCaml, VB, Swift, Pascal, Fortran, Haskell, Objective-C, Assembly, HTML, CSS, JS, SQLite, Prolog.
+Code, Compile, Run and Debug online from anywhere in world.
+
+*******************************************************************************/
+#include <iostream>
+using namespace std;
+int generatesquare(int n){
+    int digit=0;
+    int sum=0;
+    while(n>0){
+        digit=n%10;
+        sum=sum+digit*digit;
+        n=n/10;
+    }
+    return sum;
+}
+bool happynumber(int n){
+    if(n<=0){
+        return false;
+    }
+    while(n>0){
+        if(n==1){
+            return true;
+        }
+        else{
+            n=generatesquare(n);
+        }
+    }
+    return false;
+}
+int main(){
+    int n;
+    cout<<"enter any number";
+    cin>>n;
+    if(happynumber(n)){
+        cout<<"this is happynumber";
+    }
+    else{
+        cout<<"this is unhappynumber";
+    }
+}
