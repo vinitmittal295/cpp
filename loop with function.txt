@@ -16,7 +16,7 @@ int reverse(int num)
     
 }
 int main(){
-    int num;
+    int num;śś
     int g;
     cout<<"enter the last number";
     cin>>num;
