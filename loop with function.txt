@@ -306,7 +306,7 @@ int main(){
 }
 
 
-write a program to print between two numbers.
+write a program to print prime  between two numbers.
 #include <iostream>
 using namespace std;
 int prime(int num){
