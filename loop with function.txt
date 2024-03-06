@@ -16,7 +16,7 @@ int reverse(int num)
     
 }
 int main(){
-    int num;
+    int num;śś
     int g;
     cout<<"enter the last number";
     cin>>num;
@@ -306,31 +306,58 @@ int main(){
 }
 
 
-write a program to print between two numbers.
+write a program to print prime  between two numbers.
 #include <iostream>
-
 using namespace std;
 int prime(int num){
     if(num<2){
         return 0;
     }
     else{
-        int rem=num/2;
-        for(int i=2; i<rem; i++){
+        int divi=num/2;
+        for(int i=2; i<=divi; i++){
             if(num%i==0){
                 return 0;
             }
         }
-        
     }
-    return 1 ;
+    return 1;
+}
+int main(){
+    int start;
+    cout<<"enter starting number";
+    cin>>start;
+    int end;
+    cout<<"enter end number";
+    cin>>end;
+    for(int i=start; i<=end; i++){
+        if(prime(i)){
+            cout<<i;
+        }
+    }
 }
 
+write a program to break the number with all factorial with sum
+
+#include <iostream>
+using namespace std;
 int main(){
-    int n1=1;
-    int n2=10;
-    for(int i=n1; i<=n2; i++){
-        if(prime(i)){
-        cout<<i;
+    int n=789;
+    int rem;
+    int sum;
+    
+    //int fact=1;
+    while(n >0){
+        rem=n%10;
+        int fact=1;
+        for(int i=1; i<=rem; i++){
+            fact=fact*i;
+            
+        }
+        sum=sum+fact;
+        n=n/10;
     }
+    cout<<sum;
+    return 0;
+    
 }
