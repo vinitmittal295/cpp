@@ -234,8 +234,32 @@ int main(){
     fibb(n1,n2,n3,num);
     
 }
+13. Write a program to check whether a given number is a palindrome or not.
 
-13. Write a for loop to check if a number is prime or not.
+#include <iostream>
+using namespace std;
+int palindrome(int n){
+    int sum=0;
+    while(n>0){
+        int rem=n%10;
+        sum=sum+rem*rem*rem;
+        n=n/10;
+    }
+    return sum;
+}
+
+int main()
+{
+    int n;
+    cout<<"enter any number";
+    cin>>n;
+    int rem;
+    int sum=0;
+    int s=palindrome(n);
+    cout<<s;
+}
+
+14. Write a for loop to check if a number is prime or not.
 #include<bits/stdc++.h>
 using namespace std;
 int reverse(int num,int flag)
@@ -265,6 +289,247 @@ int main(){
     reverse(num,sum);
     
 }
+15. Write a program to count the number of digits in a given number.
+
+#include <iostream>
+using namespace std;
+int digit_count(int n){
+    int count=0;
+    while(n>0){
+        
+        n=n/10;
+        count++;
+    }
+    return count;
+}
+
+int main()
+{
+    int n;
+    cout<<"enter any number";
+    cin>>n;
+    int s=digit_count(n);
+    cout<<s;
+}
+17. Write a program to find the reverse of a given string.
+
+
+array question
+19. Write a program to find the factorial of each digit of a given number and add them.
+#include <iostream>
+using namespace std;
+int main(){
+    int n=789;
+    int rem;
+    int sum;
+    
+    //int fact=1;
+    while(n >0){
+        rem=n%10;
+        int fact=1;
+        for(int i=1; i<=rem; i++){
+            fact=fact*i;
+            
+        }
+        sum=sum+fact;
+        n=n/10;
+    }
+    cout<<sum;
+    return 0;
+    
+}
+
+21. Write a program to print the first N terms of the series: 1, 4, 9, 16, 25, ...
+#include <iostream>
+using namespace std;
+int digit_count(int n){
+    int s;
+    for(int i=1; i<=n; i++){
+        int s=i*i<<";
+        cout<<s;
+    }
+    return s;
+}
+
+int main()
+{
+    int n;
+    cout<<"enter any number";
+    cin>>n;
+    digit_count(n);
+}
+23. Write a program to find the factorial of a given number using recursion.
+
+
+#include <iostream>
+using namespace std;
+int count(int n){
+    int s=1;
+    if(n<=0){
+        return 1;
+    }
+    return count(n-1)*n;
+  
+}
+
+int main()
+{
+    int n;
+    cout<<"enter any number";
+    cin>>n;
+    count(n);
+    int s=count(n);
+    cout<<s;
+}
+24. Create a program to generate a pattern like a right-angled triangle using '*' character.
+
+
+
+write a program to print prime  between two numbers.
+#include <iostream>
+using namespace std;
+int prime(int num){
+    if(num<2){
+        return 0;
+    }
+    else{
+        //int divi=num/2;
+        for(int i=2; i<=divi; i++){
+            if(num%i==0){
+                return 0;
+            }
+        }
+    }
+    return 1;
+}
+int main(){
+    int start;
+    cout<<"enter starting number";
+    cin>>start;
+    int end;
+    cout<<"enter end number";
+    cin>>end;
+    for(int i=start; i<=end; i++){
+        if(prime(i)){
+            cout<<i;
+        }
+    }
+}
+
+28. Create a program to find the area of a circle given its radius.
+#include <iostream>
+using namespace std;
+int main(){
+    int r;
+    cout<<"enter radius";
+    cin>>r;
+    int y=3.14;
+    int area=(y*r*r);
+    cout<<area;
+}
+29. Write a program to check whether a given year is a leap year or not.
+#include <iostream>
+using namespace std;
+int main(){
+    int year;
+    cout<<"enter year";
+    cin>>year;
+    if(year%4==0){
+        cout<<"this is  leap year";
+    }else{
+        cout<<"this is not leap year";
+    }
+}
+
+
+32. Create a program to calculate the power of a given number using recursion.
+#include <iostream>
+using namespace std;
+int square(int n){
+    if(n<=0){
+        return 1;
+    }
+    cout<<n*n<<" ";
+    return square(n-1);
+}
+
+int main(){
+    int n;
+    cout<<"enter number";
+    cin>>n;
+    square(n);
+    
+}
+Q to find prime number
+
+#include <iostream>
+using namespace std;
+int main(){
+    int n;
+    cout<<"enter number";
+    cin>>n;
+    int flag=1;
+    for(int i=2; i<n; i++){
+        if(n%i==0){
+            flag=0;
+            break;
+        }
+    }
+    if(flag==1){
+        cout<<"prime";
+    }else{
+        cout<<"not p";
+    }
+}
+
+35. Write a program to find the sum of the series: 1/1! - 2/2! + 3/3! - 4/4! + ... + N/N!.
+
+#include <iostream>
+using namespace std;
+int fact(int n)
+{
+   int f=1;
+   for(int i=1;i<=n;i++)
+   {
+       f*=i;
+   }
+   return f;
+}
+void sum(int n)
+{
+    float s=0.0;
+    for(int i=1;i<=n;i++)
+    {
+        cout<<i<<"/"<<i<<"! +";
+        s+=float(i)/fact(i);
+    }
+    cout<<"\nsummation = "<<s;
+}
+int main()
+{
+    int n;
+    cout<<"Enter the value of n:\n";
+    cin>>n;
+    sum(n);
+}
+36. Create a program to convert a decimal number to binary.
+#include <iostream>
+using namespace std;
+void binary(int n){
+    if(n%2==0){
+        cout<<n%2;
+    }
+    else{
+        cout<<n%2;
+    }
+}
+int main(){
+    int n;
+    cout<<"enter number";
+    cin>>n;
+    binary(n);
+}
+
 
 37. Write a program to check whether a given number is a happy number or not.
 #include <iostream>
@@ -305,40 +570,8 @@ int main(){
     }
 }
 
-
-write a program to print prime  between two numbers.
-#include <iostream>
-using namespace std;
-int prime(int num){
-    if(num<2){
-        return 0;
-    }
-    else{
-        int divi=num/2;
-        for(int i=2; i<=divi; i++){
-            if(num%i==0){
-                return 0;
-            }
-        }
-    }
-    return 1;
-}
-int main(){
-    int start;
-    cout<<"enter starting number";
-    cin>>start;
-    int end;
-    cout<<"enter end number";
-    cin>>end;
-    for(int i=start; i<=end; i++){
-        if(prime(i)){
-            cout<<i;
-        }
-    }
-}
-
-write a program to break the number with all factorial with sum
-
+ 39. Write a program to find the factorial of each digit of a given number and add them until it
+becomes a single-digit number.
 #include <iostream>
 using namespace std;
 int main(){
