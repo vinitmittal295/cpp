@@ -165,8 +165,83 @@ int main(){
     cout<<g;
 }
 
+9. Write a program to find the GCD (Greatest Common Divisor) of two given numbers.
+#include<bits/stdc++.h>
+using namespace std;
+int Gcd(int a, int b)
+{
+    int temp;
+    while(b!=0)
+    {
+        temp = b;
+        b=a%b;
+        a = temp;
+    }
+    return a;
+}
+
+int main()
+{
+    int a,b,g,l;
+    cout<<"Enter the value of a and b:\n";
+    cin>>a>>b;
+    g = Gcd(a,b);
+    cout<<"GCD of : "<<a <<" and "<< b<<" is "<<g<<"\n";
+}
+
+#include<bits/stdc++.h>
+using namespace std;
+int Gcd(int a, int b)
+{
+    int temp;
+    while(b!=0)
+    {
+        temp = b;
+        b=a%b;
+        a = temp;
+    }
+    return a;
+}
+
+int main()
+{
+    int a,b,g,l;
+    cout<<"Enter the value of a and b:\n";
+    cin>>a>>b;
+    g = Gcd(a,b);
+    cout<<"GCD of : "<<a <<" and "<< b<<" is "<<g<<"\n";
+}
+
+10. Create a program to find the LCM (Least Common Multiple) of two given numbers.
 
 
+#include<bits/stdc++.h>
+using namespace std;
+int Gcd(int a, int b)
+{
+    int temp;
+    while(b!=0)
+    {
+        temp = b;
+        b=a%b;
+        a = temp;
+    }
+    return a;
+}
+int lcm(int a,int b)
+{
+    return (a*b)/Gcd(a,b);
+}
+int main()
+{
+    int a,b,g,l;
+    cout<<"Enter the value of a and b:\n";
+    cin>>a>>b;
+    g = Gcd(a,b);
+    cout<<"GCD of : "<<a <<" and "<< b<<" is "<<g<<"\n";
+    l=lcm(a,b);
+    cout<<"LCM of : "<<a <<" and "<< b<<" is "<<l<<"\n";
+}
 10. Create a for loop to find the average of numbers in a list.
 
 #include<bits/stdc++.h>
@@ -594,3 +669,6 @@ int main(){
     return 0;
     
 }
+
+
+
