@@ -189,30 +189,7 @@ int main()
     cout<<"GCD of : "<<a <<" and "<< b<<" is "<<g<<"\n";
 }
 
-#include<bits/stdc++.h>
-using namespace std;
-int Gcd(int a, int b)
-{
-    int temp;
-    while(b!=0)
-    {
-        temp = b;
-        b=a%b;
-        a = temp;
-    }
-    return a;
-}
-
-int main()
-{
-    int a,b,g,l;
-    cout<<"Enter the value of a and b:\n";
-    cin>>a>>b;
-    g = Gcd(a,b);
-    cout<<"GCD of : "<<a <<" and "<< b<<" is "<<g<<"\n";
-}
-
---------------------------------------------------------OR
+--------------------------------------------------------OR-------------------------------------------------
 
 
 #include<bits/stdc++.h>
@@ -388,6 +365,37 @@ int main(){
     reverse(num,sum);
     
 }
+14. Create a program to print all palindrome numbers between two given numbers.
+#include <bits/stdc++.h>
+using namespace std;
+int  palindrome(int num){
+    int rem = 0;
+    int sum=0;
+    int temp=num;
+    while(num>0){
+        rem=num%10;
+        sum=sum*10+rem;
+        num=num/10;
+    }
+    if(sum == temp)     cout << temp << "is the palindrome number"<<"\n";
+    return 0;
+    
+}
+int main(){
+    int start=0;
+    cout<<"enter starting number";
+    cin>>start;
+    int end=0;
+    cout<<"enter end number";
+    cin>>end;
+    for(int i=start; i<=end; i++){ palindrome(i);
+        // if(palindrome(i)){
+        //     cout<<i<<" ";
+        // }
+    }
+    return 0;
+}
+
 15. Write a program to count the number of digits in a given number.
 
 #include <iostream>
@@ -513,6 +521,28 @@ int main(){
             cout<<i;
         }
     }
+}
+
+----------------------------------------------------OR
+#include <bits/stdc++.h>
+using namespace std;
+int prime(int num){
+    int prime = 1;
+    for(int i=2;i<=num/2;i++){
+        if(num % i == 0){ prime = 0;  break;}//return false;
+    }
+    if(prime == 1) cout << num << " ";
+    return 0;
+}
+int main()
+{
+    int start, end;
+    cin >> start;
+    cin >> end;
+    for(int i=start;i<=end;i++){
+    prime(i);}
+
+    return 0;
 }
 
 28. Create a program to find the area of a circle given its radius.
@@ -693,6 +723,4 @@ int main(){
     return 0;
     
 }
-
-
 
