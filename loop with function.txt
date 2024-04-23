@@ -198,7 +198,7 @@ int Gcd(int a, int b)
 {
     while(a>0){
        
-        int rem=b%a;
+        int rem = b%a;
         b=a;
         a=rem;
     }
@@ -403,7 +403,6 @@ using namespace std;
 int digit_count(int n){
     int count=0;
     while(n>0){
-        
         n=n/10;
         count++;
     }
@@ -659,7 +658,6 @@ int main(){
     binary(n);
 }
 
-
 37. Write a program to check whether a given number is a happy number or not.
 #include <iostream>
 using namespace std;
@@ -723,4 +721,3 @@ int main(){
     return 0;
     
 }
-

@@ -82,21 +82,7 @@ int main()
 
 5. Write a recursive function to calculate the sum of numbers from 1 to 15.
 
-#include <iostream>
-using namespace std;
-int sum(int n){
-    if(n<=0)
-       return 0;
-    return sum(n-1)+n;
-}
-int main()
-{
-    int n;
-    cout<<"enter any number";
-    cin>>n;
-    int s=sum(n);
-    cout<<s;
-}
+	
 6. Create a recursive function that prints the square of numbers from 1 to 6.
 #include <iostream>
 using namespace std;
@@ -307,4 +293,26 @@ int main()
     int ans1 = cubeRec(n,i);
     cout<<ans1;
 }
+
+
+Q18 finnacci with recursion
+
+#include<bits/stdc++.h>
+using namespace std;
+
+int fib(int x){
+    if(x==0 || x==1){
+        return x;
+    }
+   
+    return fib(x-1)+fib(x-2);
+    
+}
+
+int main(){
+    int x=10;
+    int ans=fib(x);
+    cout<<ans;
+}
+
 
