@@ -469,42 +469,6 @@ int main()
     }
     return 0;
 }
-
-
-Q find the square c2=a2+b2;
-
-my solution(not correct)
-
-#include<bits/stdc++.h>
-using namespace std;
-vector<int>twoSum(vector<int>&arr,int target){
-    int i=0;
-    int n=arr.size();
-    int j=n-1;
-    for(int i=0; i<n; i++){
-        for(int j=i; j<n; j++){
-            int c= sqrt(i*i+j*j);
-            if(c==target){
-                return {arr[i],arr[j]};
-            }
-        }
-    }
-    return {};
-}
-int main(){
-    vector<int>arr={1,2,3,4,5,6,7,8};
-    int target;
-    cin>>target;
-    vector<int>ans=twoSum(arr,target);
-    if(arr.empty()){
-        cout<<"";
-    }
-    else{
-        cout<<ans[0]<<" "<<ans[1];
-    }
-}
-
-
 Q sum of two array 
 a1=[9,8,7]
 a2=[5,6,2]
@@ -624,7 +588,7 @@ int main(){
     }
 }
 
-merge two array
+Q-9) merge two array
 
 #include <bits/stdc++.h>
 using namespace std;
@@ -632,17 +596,20 @@ using namespace std;
 
 int main()
 {
-    int arr1[4]={2,4,6,8};
-    int arr2[3]={1,3,5};
+    int arr1[5]={2,4,6,7,8};
+    int arr2[5]={1,3,5,9,10};
     int n;
     // cin>>n;
-    int arr3[7]={0};
+    int arr3[10]={0};
+    int size1=5;
+    int size2=5;
+    
     int k;
     int i;
     int j;
     
-    while(i<arr1.size() && j<arr1.size()){
-        if(arr1[i]>arr2[j]){
+    while(i<size1 && j<size2){
+        if(arr2[j]<arr1[i]){
             arr3[k]=arr2[j];
             k++;
             j++;
@@ -653,11 +620,11 @@ int main()
             i++;
         }
     }
-    while(j<arr2.size()){
+    while(j<size2){
         arr3[k]=arr2[j];
         j++;
     }
-    while(i<arr1.size()){
+    while(i<size1){
         arr3[k]=arr1[i];
         i++;
     }

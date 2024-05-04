@@ -205,3 +205,366 @@ int main(){
 
 10) reverse the array
 
+#include <bits/stdc++.h>
+using namespace std;
+
+
+int main()
+{
+    int arr1[5]={2,4,6,7,8};
+    int size=5;
+    int start=0;
+    int end=size-1;
+    while(start<=end){
+        swap(arr1[start],arr1[end]);
+        start++;
+        end--;
+    }
+    for(int i=0; i<size; i++){
+        cout<<arr1[i]<<" ";
+    }
+}
+
+jab tak start end se kam ya equal rhega tab tak yr chlega .. jese hi start end se jada hoga loop ni chlega
+----------------------------------------------------------------------------------------------------------------
+
+
+NEW TOPIC:-                             VECTOR
+
+
+vector initialisation 
+1)vector<int>arr;
+2)int n;
+cin>>n;
+vector<int>arr(n);
+
+3) for insert valur in vector
+arr.push_back(5);
+4) for remove value in vector
+arr.pop_back();
+
+5) for find size
+arr.size();
+6) vector empty h ya nhi h
+arr.empty();
+
+7) vector inititalisation
+
+#include <bits/stdc++.h>
+using namespace std;
+
+
+int main()
+{
+    vector<int>arr;
+    cout<<arr.size()<<endl;
+    cout<<arr.capacity()<<endl;
+    //value insert 
+    arr.push_back(5);
+    arr.push_back(6);
+    for(int i=0; i<arr.size(); i++){
+        cout<<arr[i]<<" ";
+    }
+    cout<<endl;
+    arr.pop_back();
+    for(int i=0; i<arr.size(); i++){
+        cout<<arr[i]<<" ";
+    }
+    
+    //pehle se koi value dal k rkhna
+    cout<<"enter the value of size of array";
+    int n;
+    cin>>n;
+    vector<int>arr1(n, -101);
+    for(int i=0; i<arr1.size(); i++){
+        cout<<arr1[i]<<" ";
+    }
+    cout<<endl;
+    
+    //another method to initialise
+    vector<int>crr{1,2,3,4};
+    for(int i=0; i<crr.size(); i++){
+        cout<<crr[i]<<" ";
+    }
+    
+}
+
+---------------------------------------------------------------------------------------------------
+1) FIND UNIQUE ELEMENT
+
+#include <bits/stdc++.h>
+using namespace std;
+int findunique(vector<int>arr){
+    int ans=0;
+    for(int i=0; i<arr.size(); i++){
+        ans=ans ^ arr[i];
+    }
+    return ans;
+    
+}
+int main()
+{
+    int n;
+    cout<<"enter the size of array";
+    cin>>n;
+    vector<int>arr(n);
+    for(int i=0; i<arr.size(); i++){
+        cin>>arr[i];
+    }
+    int uniqueElement=findunique(arr);
+    cout<<"uniqueElement is "<<uniqueElement;
+    
+
+    return 0;
+}
+
+2) UNION TWO ARRAYS\
+#include <bits/stdc++.h>
+
+using namespace std;
+int main(){
+    int arr[]={1,2,3,4,5};
+int sizea=5;
+int brr[]={6,7,8,9};
+int sizeb=4;
+vector<int>ans;
+for(int i=0; i<sizea; i++){
+    ans.push_back(arr[i]);
+}
+
+for(int i=0; i<sizeb; i++){
+    ans.push_back(brr[i]);
+}
+
+for(int i=0; i<ans.size(); i++){
+    cout<<ans[i]<<" ";
+}
+
+}
+
+
+3) FIND INTERSECTION POF TWO ARRAYS
+
+    #include <bits/stdc++.h>
+    
+    using namespace std;
+    int main(){
+        
+        vector<int>arr{1,2,3,4,5};
+        vector<int>brr{3,4,6,7};
+        vector<int>ans;
+        for(int i=0; i<arr.size(); i++){
+            int element=arr[i];
+            for(int j=0; j<brr.size(); j++){
+                if(element==brr[j]){
+                    ans.push_back(element);
+                }
+            }
+        }
+        
+        // dono hi valid hain
+        for(int k=0; k<ans.size(); k++){
+            cout<<ans[k]<<" ";
+        }
+        
+        // for(auto value: ans){  
+        //     cout<<value<<" ";
+        // }
+    }
+    
+if we remove duplicate
+
+    #include <bits/stdc++.h>
+    
+    using namespace std;
+    int main(){
+        
+        vector<int>arr{1,2,3,3,4,5};
+        vector<int>brr{3,3,4,6,7};
+        vector<int>ans; 
+        for(int i=0; i<arr.size(); i++){
+            int element=arr[i];
+            for(int j=0; j<brr.size(); j++){
+                if(element==brr[j]){
+                    brr[j]=-2;
+                    ans.push_back(element);
+                }
+            } 
+        }
+        
+        // dono hi valid hain
+        for(int k=0; k<ans.size(); k++){
+            cout<<ans[k]<<" ";
+        }
+        
+        // for(auto value: ans){  
+        //     cout<<value<<" ";
+        // }
+    }
+
+4) PAIR SUM
+
+    #include <bits/stdc++.h>
+    
+    using namespace std;
+    int main(){
+        vector<int>arr{10,20,30,40};
+        int sum=50;
+        for(int i=0; i<arr.size(); i++){
+            int element=arr[i];
+            for(int j=i+1; j<arr.size(); j++){
+            if(element+arr[j]==sum){
+                cout<<"pair found "<<element<<" ,"<<arr[j];
+            }
+        }
+        }
+        
+    }
+5) 
+
+#include<bits/stdc++.h>
+using namespace std;
+int main(){
+    vector<int>arr{0,1,0,1,0,1,0,1};
+    int start=0;
+    int end=arr.size()-1;
+    int i=0;
+    while(start<=end){
+        if(arr[i]==0){
+            swap(arr[start],arr[i]);
+            i++;
+            start++;
+        }
+        else{
+            swap(arr[end],arr[i]);
+            end--;
+        }
+    }
+    for(auto val: arr){
+        cout<<val<<" ";
+    }
+}
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
+                                                                        2D ARRAY
+declare 2d array
+int arr[3][3];
+int arr[3][3]={{1,2,3}, {4,5,6}, {7,8,9}};
+
+
+#include <bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+    int arr[2][2]={{1,2},{3,4}};
+    for(int i=0; i<2; i++){
+        for(int j=0; j<2; j++){
+            cout<<arr[i][j]<<" ";
+        }
+        cout<<endl;
+    }
+    // for printing column wise
+    
+    for(int i=0; i<2; i++){
+        for(int j=0; j<2; j++){
+            cout<<arr[j][i]<<" ";
+        }
+        cout<<endl;
+    }
+    
+    
+    return 0;
+}
+
+1) FIND SUM OF ROW WISE
+
+    
+    #include <bits/stdc++.h>
+    using namespace std;
+    void printrowsum(int arr[][2],int rows,int cols){
+        
+        for(int i=0; i<rows; i++){
+            int sum=0;
+            for(int j=0; j<cols; j++){
+                sum=sum+arr[i][j];
+            }
+            cout<<sum<<endl;
+        }
+        
+    }
+    
+    int main()
+    {
+        int arr[2][2]={{1,2},{3,4}};
+        int rows=2;
+        int cols=2;
+        printrowsum(arr,rows,cols);
+        
+        return 0;
+    }
+
+2) FIND THE KEY IN 2D ARRAY
+
+    
+    #include <bits/stdc++.h>
+    using namespace std;
+    bool findkey(int arr[][2],int rows,int cols, int key){
+        
+        for(int i=0; i<rows; i++){
+            for(int j=0; j<cols; j++){
+                if(arr[i][j]==key){
+                    return true;
+                }
+            }
+        }
+        return false;
+        
+    }
+    
+    int main()
+    {
+        int arr[2][2]={{1,2},{3,4}};
+        int rows=2;
+        int cols=2;
+        int key=1;
+        cout<<findkey(arr,rows,cols,key)<<endl;
+        if(findkey(arr,rows,cols,key)){
+            cout<<"true"<<endl;
+        }
+        else{
+            cout<<"false"<<endl;
+        } 
+        
+        return 0;
+    }
+
+
+-------------------------------------------------------------------------------------------------
+
+VECTOR OF VECTOR OF 2D ARRAY
+
+
+#include <bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+    vector<vector<int>>arr;
+    vector<int>a{1,2,3};
+    vector<int>b{4,5,6};
+    vector<int>c{1,2,3};
+    arr.push_back(a);
+    arr.push_back(b);
+    arr.push_back(c);
+    
+    
+    for(int i=0; i<arr.size(); i++){
+        for(int j=0; j<arr[i].size(); j++){
+            cout<<arr[i][j]<<" ";
+        }
+        cout<<endl;
+    }
+    return 0;
+}
