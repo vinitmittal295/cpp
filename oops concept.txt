@@ -466,3 +466,79 @@ int main()
 
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------
+
+85299 4742
+
+#include<bits/stdc++.h>
+using namespace std;
+class Book{
+    string title;
+    string authorname;
+    string publication_year;
+    
+    
+    public:
+    
+    Book(){
+        string title="NULL";
+        string authorname="NULL";
+        string publication_year="NULL";
+        
+    }
+    Book(string title, string authorname,string publication_year){
+        this->title=title;
+        this->authorname=authorname;
+        this->publication_year=publication_year;
+    }
+    void display(){
+        cout<<"title: "<<title<<endl;
+        cout<<"authorname: "<<authorname<<endl;
+        cout<<"publication_year: "<<publication_year<<endl;
+        
+    }
+    
+};
+
+// library class
+
+
+class Library{
+    vector<Book>bookarr;
+    
+    public:
+    
+    void addbook(Book &b){
+        bookarr.push_back(b);
+        cout<<"book added successfully"<<endl;
+    }
+    
+    void displayallbooks(){
+        if(bookarr.empty()){
+            cout<<"library is empty";
+        }
+        else{
+            cout<<"books in the library are :";
+            int counter=0;
+            for(auto it:bookarr){
+                cout<<"Book no :"<<counter<<endl;
+                it.display();
+                counter++;
+                cout<<endl;
+            }
+        }
+    }
+    
+};
+
+int main(){
+    Book book1("premchand ", "premchand", "24_09_1990");
+    Book book2("the almighty", "premchand", "24_09_1980");
+    Book book3("premchand ", "premchand", "24_09_1991");
+    
+    Library library;
+    library.addbook(book1);
+    library.addbook(book2);
+    library.addbook(book3);
+    library.displayallbooks();
+    
+}

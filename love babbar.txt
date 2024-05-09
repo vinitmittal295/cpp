@@ -63,7 +63,7 @@ int main(){
     printarray(arr,size);
 }
 
-7) find linear search'
+7) find linear search
 
 #include<bits/stdc++.h>
 using namespace std;
@@ -89,7 +89,7 @@ int main(){
 }
 
 
-without function krengent to
+without function krengen to
 but isme jb b valuen check krega to not found chla dega 
 to ye method to kam ni ke rha
 
@@ -238,7 +238,7 @@ vector initialisation
 cin>>n;
 vector<int>arr(n);
 
-3) for insert valur in vector
+3) for insert value in vector
 arr.push_back(5);
 4) for remove value in vector
 arr.pop_back();
@@ -343,7 +343,7 @@ for(int i=0; i<ans.size(); i++){
 }
 
 
-3) FIND INTERSECTION POF TWO ARRAYS
+3) FIND INTERSECTION OF TWO ARRAYS
 
     #include <bits/stdc++.h>
     
@@ -372,7 +372,7 @@ for(int i=0; i<ans.size(); i++){
         // }
     }
     
-if we remove duplicate
+if we remove duplicate 
 
     #include <bits/stdc++.h>
     
@@ -421,7 +421,7 @@ if we remove duplicate
         
     }
 5) 
-
+0 and 1 ko ek sath rakhna
 #include<bits/stdc++.h>
 using namespace std;
 int main(){
@@ -541,13 +541,13 @@ int main()
     }
 
 
--------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------------
 
 VECTOR OF VECTOR OF 2D ARRAY
 
 
 #include <bits/stdc++.h>
-using namespace std;
+using namespace std;=\
 
 int main()
 {
@@ -567,4 +567,326 @@ int main()
         cout<<endl;
     }
     return 0;
+}
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+
+Q) sorting of colors 
+[2,0,2,1,1,0] 
+
+this is the best method  three pointer approach
+
+#include<bits/stdc++.h>
+using namespace std;
+int main ()
+{
+    vector<int>nums{2,0,2,1,1,0};
+    int l=0;
+    int m=0; 
+    int h=nums.size()-1;
+    while(m<=h){
+        if(nums[m]==0){
+            swap(nums[l],nums[m]);
+            l++;
+            m++;
+            
+        }
+        else if(nums[m]==1){
+            m++;
+        }
+        else{
+            swap(nums[m],nums[h]);
+            h--;
+        }
+    }
+    
+    for(auto it : nums){
+        cout<<it<<" ";
+    }
+
+}
+
+op is -> 0 0 1 1 2 2
+    
+   
+another method 
+
+how to get output
+
+#include<bits/stdc++.h>
+using namespace std;
+int main ()
+{
+    vector<int>nums{2,0,2,1,1,0};
+    int zeros=0;
+    int ones=0;
+    int twos=0;
+    for(int i=0; i<nums.size(); i++){
+        if(nums[i]==0){
+            zeros++;
+        }
+        else if(nums[i]==1){
+            ones++;
+        }
+        else{
+            twos++;
+        }
+    }
+    // i k value increase hoti rhegi 
+    // nums vale array mein hi update ya overlap kar rhe hain 
+    // []
+    int i=0;
+    while(zeros--){
+        nums[i]=0;
+        i++;
+    }
+    for(auto it : nums){
+        cout<<it<<" ";
+    }
+    cout<<endl;
+    
+        // yha i k value 2 hain
+        // [0,0,2,1,1,0]
+    while(ones--){
+        nums[i]=1;
+        i++;
+    }
+    for(auto it : nums){
+        cout<<it<<" ";
+    }
+    cout<<endl;
+        // yha i k value 4 ho gayi h
+        
+    while(twos--){
+        nums[i]=2;
+        i++;
+        // yha 6
+    }
+    
+    
+    
+    for(auto it : nums){
+        cout<<it<<" ";
+    }
+    
+    
+}
+
+
+another 
+
+
+#include<bits/stdc++.h>
+using namespace std;
+void sortcolors(vector<int>&nums){
+    int zeros=0;
+    int ones=0;
+    int twos=0;
+    for(int i=0; i<nums.size(); i++){
+        if(nums[i]==0){
+            zeros++;
+        }
+        else if(nums[i]==1){
+            ones++;
+        }
+        else{
+            twos++;
+        }
+    }
+
+
+    int i=0;
+    while(zeros--){
+        nums[i]==0;
+        i++;
+    }
+    while(ones--){
+        nums[i]==1;
+        i++;
+    }
+    while(twos--){
+        nums[i]==2;
+        i++;
+    }
+    
+}
+int main ()
+{
+    vector<int>nums{2,0,2,1,1,0};
+    int ans=sortcolors(nums);
+    
+    for(auto it : ans){
+        cout<<it<<" ";
+    }
+    
+    
+}
+
+
+=---------------------------------------------------------------------------------------------------------
+Q) MOVE NEGATIVE ELEMENT TO POSITIVE ELEMENT
+ INPUT ->> [1,2,-3,4,-5,6]
+
+#include<bits/stdc++.h>
+using namespace std;
+void movenegativetopositive(int arr[], int n){
+    int l=0;
+    int h=n-1;
+    while(l<=h){
+        if(arr[l]<0){
+            l++;
+        }
+        else if(arr[h]>0){
+            h--;
+        }
+        else{
+            swap(arr[l],arr[h]);
+        }
+    }
+}
+int main ()
+{
+    int arr[]={1,2,-3,4,-5,6};
+    int n=sizeof(arr)/sizeof(int);
+    
+    movenegativetopositive(arr,n);
+    for(int i=0; i<n; i++){
+        cout<<arr[i]<<" ";
+    }
+    
+}
+
+
+OUTPUT->>> -5 -3 2 4 1 6 
+
+
+
+--------------------------------------------------------------------
+Q find thre max
+#include<bits/stdc++.h>
+using namespace std;
+vector<int>findMax(vector<int>arr){
+    int first=INT_MIN;
+    int second=INT_MIN;
+    int third=INT_MIN;
+    int n=arr.size();
+    sort(arr.begin(),arr.end())
+    for(int i=0; i<n; i++){
+        if(arr[i]>first){
+            third=second;
+            second=first;
+            first=arr[i];
+        }
+        else if(arr[i]>second){
+            third=second;
+            second=arr[i];
+        }
+        else if(arr[i]>third){
+            third=arr[i];
+        }
+    }
+    return {first,second,third};
+}
+
+int main(){
+    vector<int>arr{1,2,3};
+    vector<int>ans=findMax(arr);
+    for(auto it:ans){
+        cout<<it<<" ";
+    }
+}
+
+another method
+
+#include<bits/stdc++.h>
+using namespace std;
+
+vector<int>findmin(vector<int>&num)
+{
+    vector<int>ans;
+    //1st three minimum number
+    sort(num.begin(),num.end());//o(nlogn)
+    //1 2 3 4 6 7 9
+    for(int i=num.size()-1;i>=num.size()-3;i--)//o(3)
+    {
+        ans.push_back(num[i]);
+    }
+    return ans;//o(nlogn)+o(3)=o(nlogn)=o(n)
+}
+
+int main()
+{
+    vector<int>num={3,4,2,1,6,9,7};
+    vector<int>minThree=findmin(num);
+    for(auto it:minThree)
+    {
+        cout<<it<<" ";
+    }
+
+
+--------------------------------------------------------------------------------------------------------------------------------
+
+Q ip=[1,2,3,4,5]
+  op=
+1 3 6 10 15  
+
+
+#include<bits/stdc++.h>
+using namespace std;
+
+vector<int>findmin(vector<int>&num)
+{
+    vector<int>ans(num.size(),0);
+    for(int i=0; i<num.size(); i++){
+        if(i==0){
+            ans[i]=ans[i]+num[i];
+        }
+        else{
+            ans[i]=ans[i-1]+num[i];
+        }
+         
+    }
+    return ans;
+}
+
+int main()
+{
+    vector<int>num={1,2,3,4,5};
+    vector<int>ans=findmin(num);
+    for(auto it:ans)
+    {
+        cout<<it<<" ";
+    }
+
+---------------------------------------------------------------------------------------------------------------------------------
+
+//ip [2 3 4 3 6 2]
+//op ans=[6 8 9 24 6 12]
+#include<bits/stdc++.h>
+using namespace std;
+
+vector<int>calculate(vector<int>&arr)
+{
+    vector<int>ans(arr.size());
+    for(int i=0;i<arr.size();i++)
+    {
+        if(i==0)
+            ans[i]= arr[i]*arr[i+1];
+        if(i>0 && i<arr.size()-1)
+            ans[i]=arr[i-1]*arr[i+1];
+        if(i==arr.size()-1)
+            ans[i] = arr[i-1]*arr[i];
+    }
+    return ans;
+}
+
+int main()
+{
+    vector<int>arr={2,3,4,3,6,2};
+    vector<int>ans = calculate(arr);
+    for(auto it:ans)
+    {
+        cout<<it<<" ";
+    }
 }
