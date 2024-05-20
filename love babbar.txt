@@ -1,3 +1,742 @@
+#include <iostream>
+
+using namespace std;
+int main()
+{
+    
+    //vector<int>arr(6);
+    int arr[6];
+    for(auto it: arr){
+        cin>>it;
+    }
+    
+    int count=0;
+    int key;
+    cin>>key;
+    for(auto it :arr){
+        if(it==key){
+            return count;
+        }
+        
+        count++;
+    }
+    cout<<count;
+    return 0;
+}
+---------------------------------------------------------------------------------------------------------------
+find maximum or minimum number by [apna college]......
+#include <bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int n;
+    cin>>n;
+    int arr[n];
+    for(int i=0; i<n; i++){
+        cin>>arr[i];
+    }
+    int max=INT_MIN;
+    int min=INT_MAX;
+    for(int i=0; i<n; i++){
+        if(arr[i]>max){
+            max=arr[i];
+        }
+        if(arr[i]<min){
+            min=arr[i];
+        }
+    }
+    cout<<max<<"\n"<<min;
+}
+
+----------------------------------------------another method---------------------
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+    int n;
+    cin >> n;
+    int arr[n];
+    for(int i = 0; i < n; i++) {
+        cin >> arr[i];
+    }
+    int maxNo = INT_MIN;
+    int minNo = INT_MAX;
+    for(int i = 0; i < n; i++) {
+        maxNo = max(maxNo, arr[i]);
+        minNo = min(minNo, arr[i]);
+    }
+    cout << "Maximum: " << maxNo << "\n";
+    cout << "Minimum: " << minNo << "\n";
+    return 0;
+}
+-----------------------------------------------------------------------------------------------------------------
+
+find the key in a array [apna college]
+
+#include <bits/stdc++.h>
+using namespace std;
+int linearSearch(int arr[], int n, int key){
+    for(int i=0; i<n; i++){
+        if(arr[i]==key){
+        return i;
+    }
+}
+    
+return 0;
+}
+int main() {
+    int n;
+    cout<<"enter the size of array :"<<" ";
+    cin >> n;
+    int arr[n];
+    for(int i = 0; i < n; i++) {
+        cin >> arr[i];
+    }
+    int key;
+    cin>>key;
+    cout<<linearSearch(arr,n,key);
+    return 0;
+}
+-----------------------------------------------------------------------------------------------------------------
+
+find number with binary search[apna college]
+
+#include <bits/stdc++.h>
+using namespace std;
+int binarySearch(int arr[], int n, int key){
+    int s=0;
+    int e=n;
+    
+    while(s<=e){
+        int mid=(s+e)/2;
+        if(arr[mid]==key){
+        return mid;
+    }
+    else if(arr[mid]>key){
+        e=mid-1;
+    }
+    else if(arr[mid]<key){
+        s=mid+1;
+    }
+}
+    
+return 0;
+}
+int main() {
+    int n;
+    cout<<"enter the size of array :"<<" ";
+    cin >> n;
+    int arr[n];
+    for(int i = 0; i < n; i++) {
+        cin >> arr[i];
+    }
+    int key;
+    cout<<"enter the key";
+    cin>>key;
+    cout<<binarySearch(arr,n,key);
+    return 0;
+}
+
+------------------------------------------------------------------------------------------------------------------
+find number with binary search
+
+#include<bits/stdc++.h>
+using namespace std;
+bool binarySearch(vector<int>&arr,int key)
+{
+    int l=0;
+    int hi=arr.size()-1;
+    int mid=(l+hi)/2;
+    bool flag=false;
+    while(l<=hi)
+    {   
+        if(arr[mid]==key)
+        {
+            flag=true;
+            cout<<mid;
+            return flag;
+        }
+        else if(arr[mid]>key)
+        {
+            hi=mid-1;
+        }
+        else
+        {
+            l=mid+1;
+        }
+        mid=(l+hi)/2;
+    }
+    return flag;
+}
+
+int main()
+{
+    vector<int>arr(10);
+    int key;
+    cin>>key;
+    for(auto &it:arr)
+    {
+        cin>>it;
+    }
+   if(binarySearch(arr,key))
+   {
+       cout<<" Element Found ";
+   }
+   else
+   {
+       cout<<"Element not Found";
+   }
+}
+--------------------------------------------
+----------------------------------------------------------------------
+Q find the smmallest even number and largest even number in an array;
+
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+    int n;
+    cout << "Enter array size: ";
+    cin >> n;
+    int arr[n]; 
+    for(int i = 0; i < n; i++) {
+        cin >> arr[i];
+    }
+
+    int maxIndex = -1; // Initialize maxIndex with -1
+    for(int i = 0; i < n; i++) {
+        if(arr[i] % 2 == 0) { // Check if element is even
+            if(maxIndex == -1 || arr[i] > arr[maxIndex]) { // Compare with arr[maxIndex]
+                maxIndex = i;
+            }
+        }
+    }
+
+    int minIndex = -1; // Initialize minIndex with -1
+    for(int i = 0; i < n; i++) {
+        if(arr[i] % 2 == 0) { // Check if element is even
+            if(minIndex == -1 || arr[i] < arr[minIndex]) { // Compare with arr[minIndex]
+                minIndex = i;
+            }
+        }
+    }
+
+        cout << "Index of maximum even element: " << maxIndex << endl;
+        cout << "Index of minimum even element: " << minIndex << endl;
+  
+
+    return 0;
+}
+----------------------------------------------------------------------------------------------
+for max----
+
+#include <iostream>
+using namespace std;
+int main()
+{
+    int arr[]={5,6,8,10};
+    int max=-1;
+    for(int i: arr){
+        if(arr[max]<arr[i] && arr[i]%2==0){
+            max=i;
+    }
+}
+cout<<max;
+
+    return 0;
+}
+
+for min----
+
+#include <bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+    int arr[]={5,6,8,10};
+    //int n=arr.size();
+    int min=-1;
+    for(int i: arr){
+        if(arr[min]>=arr[i] && arr[i]%2==0){
+            min=i;
+    }
+}
+cout<<min;
+return 0;
+}
+------------------------------------------------------------------------------------------------------------------
+
+Q. reverse the array
+
+two poiinter approach
+
+#include <bits/stdc++.h>
+using namespace std;
+void reverseArray(vector<int>&arr){
+    int i=0;
+    int j=arr.size()-1;
+    while(i<j){
+        swap(arr[i],arr[j]);
+        i++;
+        j--;		
+    }
+}
+
+int main()
+{
+    vector<int>arr={2,3,4,5,6,7,8};
+    int n=arr.size();
+    reverseArray(arr);
+    for(auto it: arr){
+        cout<<it<<" ";
+    }
+
+return 0;
+}
+
+Q find the target value of 15 in array  by using addition two value 
+we can take target value from user also..
+normal approach
+
+o(n2) approach
+
+#include <bits/stdc++.h>
+using namespace std;
+vector<int>twoSum(vector<int>&arr, int target){
+    for(int i=0; i<arr.size(); i++){
+        for(int j=i+1; j<arr.size(); j++){
+            if(arr[i]+arr[j]==target){
+                return {arr[i],arr[j]};
+            }
+        }
+    }
+    return {};		
+}
+int main(){
+    vector<int>arr={2,3,4,5,6,7,8};
+    int target;
+    cin>>target;
+    vector<int>ans=twoSum(arr,target);
+    if(arr.empty()){
+        cout<<"no pairs found";
+        
+    }
+    else{
+        cout<<ans[0]<<" "<<ans[1];
+    }
+    
+}
+ye 0 or 1 return vale indexing ki value hain
+
+
+Q  find the target value of 15 in array  by using addition two value 
+we can take target value from user also..
+BY USING TWO POINTER APPROACH..\
+#include<bits/stdc++.h>
+using namespace std;
+//[1,2,3,4,5,6,7,8]
+vector<int>twoSum(vector<int>&arr,int target)
+{
+    int i=0;
+    int j=arr.size()-1;
+    while(i<j)
+    {
+        int sum = arr[i]+arr[j];
+        if(sum==target)
+            return {arr[i],arr[j]};
+        else if(sum<target){
+            i++;
+        }
+        
+        else if(sum>target){
+            j--;
+        }
+    
+    }
+    return {};
+   
+}
+int main()
+{
+    vector<int>arr={1,2,3,4,5,6,7,8};
+    int target;
+   cout<<"Enter target value:\n";
+    cin>>target;
+    cout<<"original array:\n";
+    for(auto it:arr)
+    {
+        cout<<it<<" ";
+    }
+    cout<<"\n";
+   vector<int>ans =  twoSum(arr,target);
+   if(ans.empty())
+   {
+       cout<<"No pairs found";
+   }
+   else
+   {
+       cout<<ans[0]<<" and "<< ans[1] <<" makes the target: "<<target;
+   }
+   
+}
+
+Q sorting the number in ascending order[apna college]
+selection sort
+
+#include <bits/stdc++.h>
+using namespace std;
+int main(){
+    int n;
+    cout<<"enter the size";
+    cin>>n;
+    int arr[n];
+    for(int i=0; i<n; i++){
+        cin>>arr[i];
+    }
+    for(int i=0; i<n-1; i++){ 
+        for(int j=i+1; j<n; j++){
+            if(arr[j]<arr[i]){
+                int temp=arr[j];
+                arr[j]=arr[i];
+                arr[i]=temp;
+            }
+        }
+    }
+    for(int i=0; i<n; i++){
+        cout<<arr[i]<<" ";
+    }
+    cout<<"\n";
+}
+
+                               or swap with one code
+#include <bits/stdc++.h>
+using namespace std;
+int main(){
+    int n;
+    cout<<"enter the size";
+    cin>>n;
+    int arr[n];
+    for(int i=0; i<n; i++){
+        cin>>arr[i];
+    }
+    for(int i=0; i<n-1; i++){ 
+        for(int j=i+1; j<n; j++){
+            if(arr[j]<arr[i]){
+                swap(arr[i],arr[j]);
+                // int temp=arr[j];
+                // arr[j]=arr[i];
+                // arr[i]=temp;
+            }
+        }
+    }
+    for(int i=0; i<n; i++){
+        cout<<arr[i]<<" ";
+    }
+    cout<<"\n";
+}
+
+with using function
+#include<bits/stdc++.h>
+using namespace std;
+void selectionSort(int arr[],int n){
+     int count=1;
+    while(count<n){
+        for(int i=0; i<(n-count); i++){
+        if(arr[i]>arr[i+1]){
+            swap(arr[i],arr[i+1]);
+            // int temp=arr[i];
+            // arr[i]=arr[i+1];
+            // arr[i+1]=temp;
+        }
+        
+    }
+    count++;
+}
+}
+
+int main()
+{
+    int n;
+    cout<<"enter array size";
+    cin>>n;
+    int arr[n];
+    for(int i=0; i<n; i++){
+        cin>>arr[i];
+    }
+   selectionSort(arr,n);
+    for(int i=0; i<n; i++){
+        cout<<arr[i]<<" ";
+    }
+    return 0;
+}
+Q sum of two array 
+a1=[9,8,7]
+a2=[5,6,2]
+a3=[15,4,9]
+#include<bits/stdc++.h>
+using namespace std;
+
+void sumArray(vector<int>&arr1,vector<int>&arr2)
+{
+    int carry = 0;
+    vector<int>sum(arr1.size(),0);
+    for(int i=arr1.size()-1;i>=0;i--)
+    {	 
+        if(i==0)
+        {
+            sum[i] = arr1[i]+arr2[i]+carry;
+           
+        }
+        else
+        {
+            sum[i] = arr1[i]+arr2[i]+carry;
+            carry  = sum[i]/10;
+            sum[i] = sum[i]%10;
+        }
+    }
+   // cout<<carry;
+    for(auto it:sum)
+    {
+        cout<<it<<" ";
+    }
+}
+
+int main()
+{
+    vector<int>arr1={9,9,8,8};
+    vector<int>arr2={9,5,7,6};
+    sumArray(arr1,arr2);
+}
+
+ Q find duplicate
+
+ #include <bits/stdc++.h>
+using namespace std;
+int main(){
+    int n;
+    cout<<"enter the size";
+    cin>>n;
+    int arr[n];
+    for(int i=0; i<n; i++){
+        cin>>arr[i];
+    }
+    int k=0;
+    for(int i=0; i<n; i++){
+        if(arr[i]!=arr[k]){
+            ++k;
+            arr[k]=arr[i];
+        }
+    }
+    for(int i=0; i<=k; i++){	
+        cout<<arr[i]<<" ";
+    }
+    cout<<"\n";
+}
+
+
+                                   another method---------------------------------------------
+
+
+ #include <bits/stdc++.h>
+using namespace std;
+int main(){
+    int n;
+    cout<<"enter the size";
+    cin>>n;
+    int arr[n];
+    for(int i=0; i<n; i++){
+        cin>>arr[i];
+    }
+    for(auto it:arr)
+    {
+        cout<<it<<" ";
+    }
+    int sizeofans= *max_element(arr, arr + n) +1;
+    int freqarr[sizeofans]={0};
+    cout<<"\n";
+    for(int i=0;i<n;i++)
+    {
+        freqarr[arr[i]]++;
+    }
+    cout<<"\n";
+    for(int i=0;i<sizeofans;i++)
+    {
+        cout<<freqarr[i]<<" ";
+    }
+    int count =0;
+    for(int i=0;i<sizeofans;i++)
+    {
+        if(freqarr[i]>0)
+        {
+            count++;
+        }
+    }
+    int ans[count];
+    int k=0;
+    for(int i=0;i<sizeofans;i++)
+    {
+        if(freqarr[i]>0)
+        {
+            ans[k]=i;
+            k++;
+        }
+    }
+    cout<<"\n";
+    for(auto it:ans)
+    {
+        cout<<it<<" ";
+    }
+}
+
+Q-9) merge two array
+
+#include <bits/stdc++.h>
+using namespace std;
+
+
+int main()
+{
+    int arr1[5]={2,4,6,7,8};
+    int arr2[5]={1,3,5,9,10};
+    int n;
+    // cin>>n;
+    int arr3[10]={0};
+    int size1=5;
+    int size2=5;
+    
+    int k;
+    int i;
+    int j;
+    
+    while(i<size1 && j<size2){
+        if(arr2[j]<arr1[i]){
+            arr3[k]=arr2[j];
+            k++;
+            j++;
+        }
+        if(arr1[i]<arr2[j]){
+            arr3[k]=arr1[i];
+            k++;
+            i++;
+        }
+    }
+    while(j<size2){
+        arr3[k]=arr2[j];
+        j++;
+    }
+    while(i<size1){
+        arr3[k]=arr1[i];
+        i++;
+    }
+    for(int it:arr3){
+        cout<<it<<" ";
+    }
+    return 0;
+}
+
+-----------------------------------------------------------------------------------------
+Q rotate the array with value k is equal is 2 times
+#include <bits/stdc++.h>
+using namespace std;
+void maxareacal(vector<int>&arr,int k){
+    k=k%arr.size();
+    for(auto it:arr){
+        cout<<it<<" ";
+    }
+    cout<<"\n";
+    reverse(arr.begin(),arr.end());
+    for(auto it:arr){
+        cout<<it<<" ";
+    }
+    cout<<"\n";
+    reverse(arr.begin(),arr.begin()+k);
+    for(auto it:arr){
+        cout<<it<<" ";
+    }
+    cout<<"\n";
+    reverse(arr.begin()+k,arr.end());
+    for(auto it:arr){
+        cout<<it<<" ";
+    }
+    cout<<"\n";
+    
+}
+int main(){
+    vector<int>arr={1,8,6,2};
+    int k=2;
+    maxareacal(arr,k);
+}
+                                             OR                                                             
+
+#include <bits/stdc++.h>
+using namespace std;
+void maxareacal(vector<int>&arr,int k){
+    k=k%arr.size();
+    reverse(arr.begin(),arr.end());
+    reverse(arr.begin(),arr.begin()+k);
+    reverse(arr.begin()+k,arr.end());
+    for(auto it:arr){
+        cout<<it<<" ";
+    }
+    cout<<"\n";
+    
+}
+int main(){
+    vector<int>arr={1,8,6,2};
+    int k=2;
+    maxareacal(arr,k);
+}
+
+------------------------------------------------------------------------
+swap in 2 D array 
+
+#include<bits/stdc++.h>
+using namespace std;
+
+vector<vector<int>>swapnumbers(vector<vector<int>>&arr,int row1,int col1,int row2,int col2)
+{
+    // vector<int>&a1 = arr[row1];
+    // vector<int>&a2 = arr[row2];
+    // //a1 = {4,5,6}
+    // //a2 = {10,11,12}
+    // int &temp1 = a1[col1];
+    // int &temp2 = a2[col2];
+    // // cout<<temp1 <<" "<<temp2;
+    // int temp3 = temp1;
+    // temp1 = temp2;
+    // temp2 = temp3;
+   
+    int temp = arr[row1][col1];
+    arr[row1][col1] =arr[row2][col2];
+    arr[row2][col2]=temp;
+   
+    return arr;
+}
+
+int main()
+{
+    vector<vector<int>>arr={
+        {1,2,3},
+        {4,5,6},
+        {7,8,9},
+        {10,11,12}
+    };
+    vector<vector<int>>ans = swapnumbers(arr,1,1,3,1);
+    for(auto row:ans)
+    {
+        for(auto col: row)
+        {
+            cout<<col<<" ";
+        }
+        cout<<"\n";
+    }
+}
+
+
+
+
+
+
 1)change the array with 1
 
 
@@ -89,7 +828,7 @@ int main(){
 }
 
 
-without function krengen to
+without function krengent to
 but isme jb b valuen check krega to not found chla dega 
 to ye method to kam ni ke rha
 
@@ -238,7 +977,7 @@ vector initialisation
 cin>>n;
 vector<int>arr(n);
 
-3) for insert value in vector
+3) for insert valur in vector
 arr.push_back(5);
 4) for remove value in vector
 arr.pop_back();
@@ -343,7 +1082,7 @@ for(int i=0; i<ans.size(); i++){
 }
 
 
-3) FIND INTERSECTION OF TWO ARRAYS
+3) FIND INTERSECTION POF TWO ARRAYS
 
     #include <bits/stdc++.h>
     
@@ -372,7 +1111,7 @@ for(int i=0; i<ans.size(); i++){
         // }
     }
     
-if we remove duplicate 
+if we remove duplicate
 
     #include <bits/stdc++.h>
     
@@ -421,7 +1160,7 @@ if we remove duplicate
         
     }
 5) 
-0 and 1 ko ek sath rakhna
+
 #include<bits/stdc++.h>
 using namespace std;
 int main(){
@@ -547,7 +1286,7 @@ VECTOR OF VECTOR OF 2D ARRAY
 
 
 #include <bits/stdc++.h>
-using namespace std;=\
+using namespace std;
 
 int main()
 {
@@ -569,324 +1308,177 @@ int main()
     return 0;
 }
 
+--------------------------------------------------------------------------------------------------------------------
 
---------------------------------------------------------------------------------------------------------------------------------------------
+Q) maximaum diffrence between two numbers in a array
 
-Q) sorting of colors 
-[2,0,2,1,1,0] 
-
-this is the best method  three pointer approach
-
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
-int main ()
-{
-    vector<int>nums{2,0,2,1,1,0};
-    int l=0;
-    int m=0; 
-    int h=nums.size()-1;
-    while(m<=h){
-        if(nums[m]==0){
-            swap(nums[l],nums[m]);
-            l++;
-            m++;
-            
+int yash(vector<int>arr){
+    int min=INT_MAX,swami;
+    for(int i=0; i<arr.size(); i++){
+        for(int j=0; j<arr.size(); j++){
+            swami=arr[i]-arr[j];
+            //cout<<swami<<" ";
+            if(swami<min){
+                min=swami;
+            }
         }
-        else if(nums[m]==1){
-            m++;
-        }
-        else{
-            swap(nums[m],nums[h]);
-            h--;
-        }
+        cout<<endl;
     }
+    return min;
+}
+int main(){
+    vector<int>arr={2,3,4,5,6};
+    int ans=yash(arr);
+    cout<<abs(ans);
     
-    for(auto it : nums){
-        cout<<it<<" ";
-    }
-
 }
 
-op is -> 0 0 1 1 2 2
-    
-   
-another method 
 
-how to get output
+------------------------------------------------------------------------------------------
 
-#include<bits/stdc++.h>
-using namespace std;
-int main ()
-{
-    vector<int>nums{2,0,2,1,1,0};
-    int zeros=0;
-    int ones=0;
-    int twos=0;
-    for(int i=0; i<nums.size(); i++){
-        if(nums[i]==0){
-            zeros++;
-        }
-        else if(nums[i]==1){
-            ones++;
-        }
-        else{
-            twos++;
-        }
-    }
-    // i k value increase hoti rhegi 
-    // nums vale array mein hi update ya overlap kar rhe hain 
-    // []
-    int i=0;
-    while(zeros--){
-        nums[i]=0;
-        i++;
-    }
-    for(auto it : nums){
-        cout<<it<<" ";
-    }
-    cout<<endl;
+INTERSECTION OF TWO ARRAY
+
+    #include <bits/stdc++.h>
     
-        // yha i k value 2 hain
-        // [0,0,2,1,1,0]
-    while(ones--){
-        nums[i]=1;
-        i++;
-    }
-    for(auto it : nums){
-        cout<<it<<" ";
-    }
-    cout<<endl;
-        // yha i k value 4 ho gayi h
+    using namespace std;
+    int main(){
         
-    while(twos--){
-        nums[i]=2;
-        i++;
-        // yha 6
+        vector<int>arr{1,2,3,4,5};
+        vector<int>brr{3,4,6,7};
+        vector<int>ans;
+        for(int i=0; i<arr.size(); i++){
+            int element=arr[i];
+            for(int j=0; j<brr.size(); j++){
+                if(element==brr[j]){
+                    brr[j]=-2;
+                    ans.push_back(element);
+                }
+            }
+        }
+        
+        // dono hi valid hain
+        for(int k=0; k<ans.size(); k++){
+            cout<<ans[k]<<" ";
+        }
+        
+        // for(auto value: ans){  
+        //     cout<<value<<" ";
+        // }
     }
     
-    
-    
-    for(auto it : nums){
-        cout<<it<<" ";
+-----------------------------------------------------------------------------------
+
+FIND UNIQUIE ELEMENT
+
+#include <bits/stdc++.h>
+using namespace std;
+int findunique(vector<int>arr){
+    int ans=0;
+    for(int i=0; i<arr.size(); i++){
+        ans=ans ^ arr[i];
     }
-    
+    return ans;
     
 }
+int main()
+{
+    int n;
+    cout<<"enter the size of array";
+    cin>>n;
+    vector<int>arr(n);
+    for(int i=0; i<arr.size(); i++){
+        cin>>arr[i];
+    }
+    int uniqueElement=findunique(arr);
+    cout<<"uniqueElement is "<<uniqueElement;
+    
 
-
-another 
-
+    return 0;
+}
+----------------------------------------------------------------
+SWAP IN 2D ARRAY
 
 #include<bits/stdc++.h>
 using namespace std;
-void sortcolors(vector<int>&nums){
-    int zeros=0;
-    int ones=0;
-    int twos=0;
-    for(int i=0; i<nums.size(); i++){
-        if(nums[i]==0){
-            zeros++;
-        }
-        else if(nums[i]==1){
-            ones++;
-        }
-        else{
-            twos++;
-        }
-    }
 
-
-    int i=0;
-    while(zeros--){
-        nums[i]==0;
-        i++;
-    }
-    while(ones--){
-        nums[i]==1;
-        i++;
-    }
-    while(twos--){
-        nums[i]==2;
-        i++;
-    }
-    
-}
-int main ()
+vector<vector<int>>swapnumbers(vector<vector<int>>&arr,int row1,int col1,int row2,int col2)
 {
-    vector<int>nums{2,0,2,1,1,0};
-    int ans=sortcolors(nums);
-    
-    for(auto it : ans){
-        cout<<it<<" ";
-    }
-    
-    
+    // vector<int>&a1 = arr[row1];
+    // vector<int>&a2 = arr[row2];
+    // //a1 = {4,5,6}
+    // //a2 = {10,11,12}
+    // int &temp1 = a1[col1];
+    // int &temp2 = a2[col2];
+    // // cout<<temp1 <<" "<<temp2;
+    // int temp3 = temp1;
+    // temp1 = temp2;
+    // temp2 = temp3;
+   
+    int temp = arr[row1][col1];
+    arr[row1][col1] =arr[row2][col2];
+    arr[row2][col2]=temp;
+   
+    return arr;
 }
 
+int main()
+{
+    vector<vector<int>>arr={
+        {1,2,3},
+        {4,5,6},
+        {7,8,9},
+        {10,11,12}
+    };
+    vector<vector<int>>ans = swapnumbers(arr,1,1,3,1);
+    for(auto row:ans)
+    {
+        for(auto col: row)
+        {
+            cout<<col<<" ";
+        }
+        cout<<"\n";
+    }
+}
 
-=---------------------------------------------------------------------------------------------------------
-Q) MOVE NEGATIVE ELEMENT TO POSITIVE ELEMENT
- INPUT ->> [1,2,-3,4,-5,6]
-
+--------------------------------------------------------------------------------------
+BUBBLE SORT
 #include<bits/stdc++.h>
 using namespace std;
-void movenegativetopositive(int arr[], int n){
-    int l=0;
-    int h=n-1;
-    while(l<=h){
-        if(arr[l]<0){
-            l++;
-        }
-        else if(arr[h]>0){
-            h--;
-        }
-        else{
-            swap(arr[l],arr[h]);
-        }
-    }
-}
-int main ()
+
+int main()
 {
-    int arr[]={1,2,-3,4,-5,6};
-    int n=sizeof(arr)/sizeof(int);
-    
-    movenegativetopositive(arr,n);
+    int n;
+    cout<<"enter array size";
+    cin>>n;
+    int arr[n];
+    for(int i=0; i<n; i++){
+        cin>>arr[i];
+    }
+    int count=1;
+    while(count<n){
+        for(int i=0; i<(n-count); i++){
+        if(arr[i]>arr[i+1]){
+            swap(arr[i],arr[i+1]);
+            // int temp=arr[i];
+            // arr[i]=arr[i+1];
+            // arr[i+1]=temp;
+        }
+        
+    }
+    count++;
+}
     for(int i=0; i<n; i++){
         cout<<arr[i]<<" ";
     }
-    
+    return 0;
 }
 
 
-OUTPUT->>> -5 -3 2 4 1 6 
 
 
 
---------------------------------------------------------------------
-Q find thre max
-#include<bits/stdc++.h>
-using namespace std;
-vector<int>findMax(vector<int>arr){
-    int first=INT_MIN;
-    int second=INT_MIN;
-    int third=INT_MIN;
-    int n=arr.size();
-    sort(arr.begin(),arr.end())
-    for(int i=0; i<n; i++){
-        if(arr[i]>first){
-            third=second;
-            second=first;
-            first=arr[i];
-        }
-        else if(arr[i]>second){
-            third=second;
-            second=arr[i];
-        }
-        else if(arr[i]>third){
-            third=arr[i];
-        }
-    }
-    return {first,second,third};
-}
-
-int main(){
-    vector<int>arr{1,2,3};
-    vector<int>ans=findMax(arr);
-    for(auto it:ans){
-        cout<<it<<" ";
-    }
-}
-
-another method
-
-#include<bits/stdc++.h>
-using namespace std;
-
-vector<int>findmin(vector<int>&num)
-{
-    vector<int>ans;
-    //1st three minimum number
-    sort(num.begin(),num.end());//o(nlogn)
-    //1 2 3 4 6 7 9
-    for(int i=num.size()-1;i>=num.size()-3;i--)//o(3)
-    {
-        ans.push_back(num[i]);
-    }
-    return ans;//o(nlogn)+o(3)=o(nlogn)=o(n)
-}
-
-int main()
-{
-    vector<int>num={3,4,2,1,6,9,7};
-    vector<int>minThree=findmin(num);
-    for(auto it:minThree)
-    {
-        cout<<it<<" ";
-    }
 
 
---------------------------------------------------------------------------------------------------------------------------------
 
-Q ip=[1,2,3,4,5]
-  op=
-1 3 6 10 15  
-
-
-#include<bits/stdc++.h>
-using namespace std;
-
-vector<int>findmin(vector<int>&num)
-{
-    vector<int>ans(num.size(),0);
-    for(int i=0; i<num.size(); i++){
-        if(i==0){
-            ans[i]=ans[i]+num[i];
-        }
-        else{
-            ans[i]=ans[i-1]+num[i];
-        }
-         
-    }
-    return ans;
-}
-
-int main()
-{
-    vector<int>num={1,2,3,4,5};
-    vector<int>ans=findmin(num);
-    for(auto it:ans)
-    {
-        cout<<it<<" ";
-    }
-
----------------------------------------------------------------------------------------------------------------------------------
-
-//ip [2 3 4 3 6 2]
-//op ans=[6 8 9 24 6 12]
-#include<bits/stdc++.h>
-using namespace std;
-
-vector<int>calculate(vector<int>&arr)
-{
-    vector<int>ans(arr.size());
-    for(int i=0;i<arr.size();i++)
-    {
-        if(i==0)
-            ans[i]= arr[i]*arr[i+1];
-        if(i>0 && i<arr.size()-1)
-            ans[i]=arr[i-1]*arr[i+1];
-        if(i==arr.size()-1)
-            ans[i] = arr[i-1]*arr[i];
-    }
-    return ans;
-}
-
-int main()
-{
-    vector<int>arr={2,3,4,3,6,2};
-    vector<int>ans = calculate(arr);
-    for(auto it:ans)
-    {
-        cout<<it<<" ";
-    }
-}

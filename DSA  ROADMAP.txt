@@ -21,14 +21,17 @@ doubly linked list
 circular linked list
 
 5) trees
-primaryt trees
+primary trees
 
-)6) leetcode
+6) leetcode
 diagonal of tree
 height of treee
 count children
 
 
+bdy cke
+road cutting
+peak elements
 
 
 
